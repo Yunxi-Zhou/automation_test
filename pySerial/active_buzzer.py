@@ -6,6 +6,7 @@ arduino_port = '/dev/cu.usbmodem1101'
 baud_rate = 9600
 timeout = 1
 
+# initialize serial communication
 ser = serial.Serial(arduino_port, baud_rate, timeout = timeout)
 time.sleep(2)
 
