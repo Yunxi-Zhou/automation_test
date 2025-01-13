@@ -30,7 +30,7 @@ def main():
             if user_input in ['CW', 'CCW']:
                 send_command(user_input)
             else:
-                print('Invalid command.')
+                print('in')
     except KeyboardInterrupt:
         print('Existing..')
     finally:
