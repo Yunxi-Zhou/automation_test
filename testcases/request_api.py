@@ -1,3 +1,6 @@
+# part 1 of automation test
+# send request
+
 import requests as req
 
 req.get(url, params=None, **kwargs)
