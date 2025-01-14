@@ -1,0 +1,11 @@
+
+Interface automation: three method for implementing interface association
+1. Use global variables to store the response data from one API and reuse it in subsequents APIs
+2. Save API responses in a database or file for later use
+3. To achieve extreme encapsulation for interface association with regular expression
+(3. 极限封装成和工具一样只需要正则表达式就可以实现接口关联)
+
+Interface automation: two method to extract variables
+1. JSON-Based Extraction (JsonPath)
+2. Regular Expression(Regex) Extraction
+
