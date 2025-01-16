@@ -1,0 +1,10 @@
+Difference between data and json
+
+depends on the type of parameters that you need to pass
+
+postman: - from data - x.www-form-urlencoded - raw - binary
+
+form-data: upload form and data
+x.www-form-urlencoded: only form
+raw: json, text,
+binary: translate the file to binary file transmit
