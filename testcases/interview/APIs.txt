@@ -1,0 +1,4 @@
+API
+
+Application Programming Interface:
+API is a set of rules, protocols, and tools that allow different software application to communicate with each other.
