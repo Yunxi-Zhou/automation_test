@@ -1,5 +1,3 @@
-# 3. create the interface of the tag
-
 import random
 import requests as req
 import jsonpath as jp
@@ -7,7 +5,7 @@ import json
 
 class TestApi:
     access_token = ""
-
+    # 1. get the authentication code access token interface
     def test_get_token(self):
         # ?grant_type=client_credential&appid=appid&secret=secret
         # grant type 用户类型
@@ -31,6 +29,15 @@ class TestApi:
         # print(value)
         TestApi.access_token = value[0]
 
+    # 2. get the interface of the tag 获取已创建的标签接口
+    # Interface association (接口关联): refers to the process of linking or connecting multiple APIs
+    '''
+    rule of jsonpath expression:
+    $ root node
+    . child node (sub-node) -> $.access_token
+    .. recursion achieve child node
+    [] represent get the value of list, start at 0 -> [{id:0}, {id:1}, {id:2}]
+    '''
     def test_select_flag(self):
         url = "https://api.weixin.qq.com/cgi-bin/tags/get"
         datas = {
@@ -39,6 +46,7 @@ class TestApi:
         res = req.get(url, params=datas)
         print(res.json())
 
+    # 3. create the interface of the tag
     def test_create_flag(self):
         url = "https://api.weixin.qq.com/cgi-bin/tags/create?access_token="+TestApi.access_token
         datas = {"tag":{"name":"广东"+str(random.randint(10000,99999))}}
