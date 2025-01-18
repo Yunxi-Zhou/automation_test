@@ -9,6 +9,10 @@ class TestApi:
     access_token = ""
 
     def test_get_token(self):
+        # ?grant_type=client_credential&appid=appid&secret=secret
+        # grant type 用户类型
+        # appid 第三方用户唯一id
+        # secret 第三方用户唯一密钥
         url = "https://api.weixin.qq.com/cgi-bin/token"
         datas = {
             "grant_type": "client_credential",
@@ -17,6 +21,8 @@ class TestApi:
         }
 
         res = req.get(url, params=datas)
+        # return .json -> .json: data consist of {} and []
+        # print(res.text)
         result = res.json()
         print(result)
 
