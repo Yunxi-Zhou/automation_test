@@ -1,7 +1,6 @@
 # Handles API requests and response
 
 import requests as req
-import json
 
 class APIHandler():
     def __init__(self,access_token):
