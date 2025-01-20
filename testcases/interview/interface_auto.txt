@@ -8,4 +8,5 @@ Interface automation: three method for implementing interface association
 Interface automation: two method to extract variables
 1. JSON-Based Extraction (JsonPath)
 2. Regular Expression(Regex) Extraction
-
+2.1 re.search() -- get a value
+2.2 re.findall() -- many values
