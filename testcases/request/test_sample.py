@@ -54,9 +54,35 @@ class TestApi:
         # print(res.json())
         rs = json.loads(json.dumps(res.json()).replace("\\\\","\\"))
         print(rs)
+    
+    # 4. delete file
+    def test_file_upload(self):
+        url = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token="+TestApi.access_token
+        data = {"media":open("/Users/ethan/Downloads/IMG_0184.jpg","rb")}
+        res = req.post(url, files=data)
+        print(res.json())
+        
+    # cookie association interface
+    def test_start(self):
+        url = "http://47.107.116.139/phpwind/"
+        res = req.get(url)
+        print(res.text)
+    
+    # def test_login(self):
+    #     url = "http://47.107.116.139/phpwind/index.php?m=u&c=login&a=dorun"
+    #     data = {
+    #         "username":"baili",
+    #         "password":"baili123",
+    #         "csrf":"",
+    #         "back_url":"",
+    #         "invite":""
+    #     }
 
 if __name__ == '__main__':
     test = TestApi()
-    test.test_get_token()
-    test.test_select_flag()
-    test.test_create_flag()
+    # test.test_get_token()
+    # test.test_select_flag()
+    # # test.test_create_flag()
+    # test.test_file_upload()
+    test.test_start()
+    
