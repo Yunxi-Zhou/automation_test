@@ -1,16 +1,17 @@
 from commons.request_util import RequestUtil
 import re
-
+import pytest
 class TestPhpWind:
     csrf_token = ""
     # cookie association interface
+    @pytest.mark.smoke
     def test_start(self):
         url = "http://47.107.116.139/phpwind/"
         res = RequestUtil().all_send_request(method="get",url=url)
         result = res.text  # string
         # print(result)
         TestPhpWind.csrf_token = re.search('name="csrf_token" value="(.*?)"',result).group(1)
-        print(TestPhpWind.csrf_token)
+        # print(TestPhpWind.csrf_token) 
         
     def test_login(self):
         url = "http://47.107.116.139/phpwind/index.php?m=u&c=login&a=dorun"
