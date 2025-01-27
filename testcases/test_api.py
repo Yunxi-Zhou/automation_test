@@ -1,13 +1,21 @@
 import random
 import jsonpath as jp
 import json
-
+import pytest
 from commons.request_util import RequestUtil
 
 
 class TestApi:
     access_token = ""
+    
+    # def setup_class(self):
+    #     print("before functions request: connect database")
+            
+    # def teardown_class(self):
+    #     print("after function request: close database")
+    
     # 1. get the authentication code access token interface
+    @pytest.mark.smoke
     def test_get_token(self):
         # ?grant_type=client_credential&appid=appid&secret=secret
         # grant type 用户类型
@@ -40,6 +48,7 @@ class TestApi:
     .. recursion achieve child node
     [] represent get the value of list, start at 0 -> [{id:0}, {id:1}, {id:2}]
     '''
+    @pytest.mark.user_manager
     def test_select_flag(self):
         url = "https://api.weixin.qq.com/cgi-bin/tags/get"
         datas = {
